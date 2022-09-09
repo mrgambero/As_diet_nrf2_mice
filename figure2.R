@@ -24,7 +24,10 @@ map = readRDS("mapfile.RDS")
 bac.otu = readRDS("ASV_table.RDS")
 bac.otu.tax = readRDS("TAX_table.RDS")
 
-
+#see if the correct factor is set as reference (see here: https://support.bioconductor.org/p/132888/)
+map$Genotype #ok
+map$Diet #ok
+map$Arsenic #ok
 
 
 ###Change seq to ASVs
