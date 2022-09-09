@@ -317,7 +317,7 @@ bac.otu_p = bac.otu_p/sum(bac.otu_p)
 sort(-bac.otu_p)
 
 #####richness graphs
-summary(aov(Richness.rar~Genotype*Diet*Arsenic, data=map))
+summary(aov(Richness.rar~Genotype*Diet*Arsenic, data=map)) #same results if we invert orders of predictors
 par(mfrow=c(2,2))
 plot(lm(Richness.rar~Genotype*Diet*Arsenic, data=map))####good!
 summary(aov(Richness.rar~Genotype*Diet*Arsenic, data=map))
@@ -358,7 +358,7 @@ richness_As
 
 
 map$center_Ars = scale(map$Arsenic, scale = FALSE, center = TRUE)
-Anova(lm(Shannon.rar~Diet*Genotype*Arsenic, data=map))
+Anova(lm(Shannon.rar~Diet*Genotype*Arsenic, data=map))#same results if we invert orders of predictors
 #check_model(lm(Richness.rar~Genotype*Diet*Arsenic, data=map)) does not work
 par(mfrow=c(2,2))
 plot(lm(Shannon.rar~Genotype*Diet*Arsenic, data=map))####good
